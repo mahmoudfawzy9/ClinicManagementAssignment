@@ -40,7 +40,7 @@ public class Appointment {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "description")
+    @Column(name = "appointment-status")
     AppointmentStatus appointmentStatus;
 
     @Column(name = "employee_id")
