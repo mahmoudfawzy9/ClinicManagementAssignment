@@ -24,12 +24,12 @@ public class AppointmentController {
     }
     //The function receives a GET request, processes it, and gives back a list of Appointment as a response.
     @GetMapping({"/{appointmentId}"})
-    public ResponseEntity<Appointment> getTodo(@PathVariable Long appointmentId) {
+    public ResponseEntity<Appointment> getAppointment(@PathVariable Long appointmentId) {
         return new ResponseEntity<>(appointmentService.getAppointmentById(appointmentId), HttpStatus.OK);
     }
     //The function receives a POST request, processes it, creates a new Appointment and saves it to the database, and returns a resource link to the created appointment.
     @PostMapping({"/{appointmentId}"})
-    public ResponseEntity<Appointment> saveTodo(@RequestBody Appointment todo) {
+    public ResponseEntity<Appointment> saveAppointment(@RequestBody Appointment todo) {
         Appointment appointment1 = appointmentService.insert(todo);
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add("appointment", "/api/v1/appointment/" + appointment1.getId().toString());
@@ -43,7 +43,7 @@ public class AppointmentController {
     }
     //The function receives a DELETE request, deletes the Appointment with the specified Id.
     @DeleteMapping({"/{appointmentId}"})
-    public ResponseEntity<Appointment> deleteTodo(@PathVariable("appointmentId") Long appointmentId) {
+    public ResponseEntity<Appointment> deleteAppointment(@PathVariable("appointmentId") Long appointmentId) {
         appointmentService.deleteAppointment(appointmentId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
