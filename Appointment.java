@@ -30,6 +30,9 @@ public class Appointment {
     @Column(name = "patient_name")
     private String patientName;
 
+    @Column(name = "diagnose_price")
+    private BigDecimal diagnosePrice;
+    
     @ManyToOne
     @JoinColumn(name = "patient_id", nullable = false)
     private Patient patient;
