@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @CrossOrigin("http://localhost:4200")
 @Repository
 public interface AppointmentRepository extends CrudRepository<Appointment, Long> {
+    
+    @Query("SELECT a FROM Appointment a WHERE a.name LIKE %?1%")
+    public List<Appointment> findAll(String keyword);
 
     Page<Appointment> findByAppointmentId(@RequestParam("id") Long id, Pageable pageable);
 
