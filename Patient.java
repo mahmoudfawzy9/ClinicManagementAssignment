@@ -12,13 +12,13 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-@Table(name = "appointment")
+@Table(name = "patient")
 @Data
 public class Patient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "patient_id", updatable = false, nullable = true)
+    @Column(name = "id", updatable = false, nullable = true)
     private Long id;
 
     @Column(name = "title", length = 5)
