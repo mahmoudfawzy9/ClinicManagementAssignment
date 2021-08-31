@@ -17,5 +17,5 @@ public interface AppointmentRepository extends CrudRepository<Appointment, Long>
 
     Page<Appointment> findByAppointmentId(@RequestParam("id") Long id, Pageable pageable);
 
-    Page<Appointment> findByNameContaining(@RequestParam("name") String name, Pageable pageable);
+    Page<Appointment> findByNameContaining(@RequestParam("title") String title, Pageable pageable);
 }
