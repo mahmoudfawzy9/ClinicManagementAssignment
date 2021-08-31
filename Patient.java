@@ -21,9 +21,6 @@ public class Patient {
     @Column(name = "id", updatable = false, nullable = true)
     private Long id;
 
-    @Column(name = "title", length = 5)
-    private String title;
-
     @Basic(optional = false)
     @Column(name = "first_name", length = 100, nullable = false)
     private String firstName;
