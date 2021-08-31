@@ -13,12 +13,12 @@ public class AppointmentServiceImp implements AppointmentService{
     AppointmentRepository appointmentRepository;
 
         //search keyword
-        public List<Appointment> listAll(String keyword) {
-        if(keyword != null) {
-            return appointmentRepository.findAll(keyword);
-        }
-        return (List<Appointment>) appointmentRepository.findAll();
-    }
+//         public List<Appointment> listAll(String keyword) {
+//         if(keyword != null) {
+//             return appointmentRepository.findAll(keyword);
+//         }
+//         return (List<Appointment>) appointmentRepository.findAll();
+//     }
     
     public AppointmentServiceImp(AppointmentRepository appointmentRepository) {
         this.appointmentRepository = appointmentRepository;
